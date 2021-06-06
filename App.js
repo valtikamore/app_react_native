@@ -1,49 +1,31 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button, Alert, Image, TouchableHighlight, TouchableWithoutFeedback} from 'react-native';
+import {Platform, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
 
 export default function App() {
-    const handlePress = () => Alert.alert('0101010', 'main message', [
-        {test: 'button text', onPress: () => console.log('tes')},
-        {test: 'button text', onPress: () => console.log('eeee')},
-    ])
-    const handlePress2 = () => Alert.prompt('0101010', 'main message', [
-        {test: 'button text', onPress: () => console.log('tes')},
-        {test: 'button text', onPress: () => console.log('eeee')},
-    ])
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>hello {'\n'}friend</Text>
-            <Text style={styles.text}>hello {'\n'}friend</Text>
-            <Button title="Press me" onPress={handlePress}/>
-            <Button title="Press me" onPress={handlePress2} style={{marginBottom: 20, display: 'block'}}/>
-            <TouchableHighlight onPress={handlePress} style={{marginBottom: 20}}>
-                <Image blurRadius={2} source={{
-                    width: 200,
-                    height: 200,
-                    uri: 'https://picsum.photos/200/300'
-                }}/>
-            </TouchableHighlight>
-            <TouchableWithoutFeedback onPress={handlePress}>
-                <Image blurRadius={2} source={{
-                    width: 200,
-                    height: 200,
-                    uri: 'https://picsum.photos/200/300'
-                }}/>
-            </TouchableWithoutFeedback>
-
+        <View style={styles.MainBlock}>
+            <View style={[styles.box,{backgroundColor:'white',marginBottom:10,flex:2}]}></View>
+            <View style={[styles.box,{backgroundColor:'red',marginBottom:10}]}></View>
+            <View style={[styles.box,{backgroundColor:'white',marginBottom:10}]}></View>
         </View>
+        
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 20,
-        flex: 1,
-        alignItems: 'center',
-        backgroundColor: 'black',
+    MainBlock: {
+      flex:1,
+      flexDirection:'column-reverse'
     },
-    text: {
-        color: 'white'
+    box: {
+        flex:1,
+        backgroundColor:'lightyellow'
     }
+   
 });
+
+
+/*<Lesson1/>*/
+// Lesson2_1
+
